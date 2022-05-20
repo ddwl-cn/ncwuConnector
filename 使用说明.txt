@@ -1,0 +1,10 @@
+1)、确保已经有python3以上的环境
+2)、安装必要的库
+3)、将校园网账号密码分两行保存在 'account.txt' 中
+4)、添加开机启动脚本:
+    修改start.bat中的 'D: && cd D:\Pyproject\ncwuConnector' 为 你的项目路径
+    例如:'F: && F:\Pyproject\ncwuConnector' 即可
+5)、(win + R) 键输入 shell:startup
+    将start.bat放到里面就行
+
+PS: 如果开机遇到bat脚本启动后闪退，可以查看 error.txt 中的错误信息酌情解决
