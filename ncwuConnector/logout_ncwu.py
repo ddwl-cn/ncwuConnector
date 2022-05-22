@@ -18,6 +18,7 @@ home_url = 'http://192.168.0.170:8900/home'
 onekey_url = 'http://192.168.0.170:8900/home/onekey'
 
 
+# 识别登录页面的验证码
 def ImgToString(img):
     # 保存图片到本地
     with open('../code.jpg', 'wb') as f:
@@ -35,7 +36,7 @@ def ImgToString(img):
 # 设备在线情况
 def checkStatus(html=""):
     if html.find('没有找到数据') != -1:
-        # info('当前没有设备在线')
+        info('当前还没有设备在线, 可以直接登录')
         return False
     return True
 
