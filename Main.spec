@@ -5,10 +5,9 @@ block_cipher = None
 
 
 a = Analysis(['Main.py'],
-             pathex=['D:\\Python\\Lib\\site-packages', 'D:\\Pyproject\\ncwuConnector'],
+             pathex=['D:\\Pyproject\\ncwuConnector'],
              binaries=[],
-             datas=[('D:\Python\Lib\site-packages\onnxruntime\capi\onnxruntime_providers_shared.dll', 'onnxruntime\\capi'),
-             ('D:\Python\Lib\site-packages\ddddocr\common.onnx', 'ddddocr')],
+             datas=[],
              hiddenimports=[],
              hookspath=[],
              hooksconfig={},

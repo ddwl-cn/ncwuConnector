@@ -36,7 +36,7 @@ def ImgToString(img):
 # 设备在线情况
 def checkStatus(html=""):
     if html.find('没有找到数据') != -1:
-        info('当前还没有设备在线, 可以直接登录')
+        info('当前还没有设备在线，可以直接登录')
         return False
     return True
 

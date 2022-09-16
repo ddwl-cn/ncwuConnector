@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "D:/Pyproject/ncwuConnector/Main.py", line 98, in <module>
+    if tryConnect(1):
+  File "D:/Pyproject/ncwuConnector/Main.py", line 55, in tryConnect
+    if ping(random.randint(0, len(IPaddress) - 1)) != 0:
+  File "D:/Pyproject/ncwuConnector/Main.py", line 32, in ping
+    out, err = p.communicate()
+  File "D:\Python\lib\subprocess.py", line 1024, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "D:\Python\lib\subprocess.py", line 1395, in _communicate
+    self.stdout_thread.join(self._remaining_time(endtime))
+  File "D:\Python\lib\threading.py", line 1011, in join
+    self._wait_for_tstate_lock()
+  File "D:\Python\lib\threading.py", line 1027, in _wait_for_tstate_lock
+    elif lock.acquire(block, timeout):
+KeyboardInterrupt

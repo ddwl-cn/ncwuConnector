@@ -8,7 +8,7 @@ import time
 import re
 
 from ncwuConnector.encryption import get_base64, get_xencode, get_md5, get_sha1
-from ncwuConnector.loggers import info
+from ncwuConnector.loggers import info, debug
 
 '''
 此代码在：https://blog.csdn.net/qq_20534023/article/details/124159181
@@ -65,7 +65,7 @@ def __init_getip(acid, action=None):
     init_res = requests.get(init_url.format(acid), headers=header)
     # info("初始化获取ip")
     ip = re.search('id="user_ip" value="(.*?)"', init_res.text).group(1)
-    info('{}ip: '.format(action) + ip)
+    info('{}ip：'.format(action) + ip)
 
 
 def __get_token(username):
@@ -87,7 +87,7 @@ def __do_complex_work(acid, username, password):
     i = "{SRBX1}" + get_base64(get_xencode(i, token))
     hmd5 = get_md5(password, token)
     chksum = get_sha1(__get_chksum(acid, username))
-    # info("所有加密工作已完成")
+    # debug("所有加密工作已完成")
 
 
 def __login(acid, username):
@@ -111,7 +111,7 @@ def __login(acid, username):
     rad_user_info += srun_portal_params.get("callback")
 
     srun_portal_res = requests.get(srun_portal_api, params=srun_portal_params, headers=header)
-    # print(srun_portal_res.text)
+    # debug(srun_portal_res.text)
     rad_user_res = requests.get(rad_user_info, headers=header)
 
 
@@ -128,7 +128,7 @@ def __logout(acid, username):
         '_': int(time.time() * 1000)
     }
     srun_portal_res = requests.get(srun_portal_api, params=srun_portal_params, headers=header)
-    # print(srun_portal_res.text)
+    # debug(srun_portal_res.text)
 
 
 # 登录校园网
